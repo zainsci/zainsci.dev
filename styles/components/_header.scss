@@ -1,0 +1,47 @@
+.header {
+  max-width: $maxWidth-lg;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 $spacing5;
+
+  .zainsci {
+    font-family: $font-heading;
+  }
+
+  .active {
+    color: $primary !important;
+    font-weight: 600;
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: $spacing4 0;
+  font-weight: 600;
+
+  &__list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__item {
+  }
+  &__item + &__item {
+    margin-left: $spacing4;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $text;
+
+    &:hover {
+      color: lighten($color: $text, $amount: 30);
+    }
+  }
+}
