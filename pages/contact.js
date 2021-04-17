@@ -1,4 +1,5 @@
 import Layout from "../components/layout";
+import SocialIcons from "../components/social-icons";
 
 const Contact = () => {
   return (
@@ -35,6 +36,7 @@ const Contact = () => {
           </a>
           .
         </p>
+        <SocialIcons />
       </div>
     </Layout>
   );

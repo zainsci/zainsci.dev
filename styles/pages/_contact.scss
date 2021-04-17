@@ -22,3 +22,30 @@
     }
   }
 }
+
+.social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__icon + &__icon {
+    margin-left: $spacing4;
+  }
+
+  &__icon {
+    a {
+      background-color: $primary;
+      padding: $spacing3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      transition: 0.25s ease;
+
+      &:hover {
+        background-color: white;
+        color: $primary;
+      }
+    }
+  }
+}
