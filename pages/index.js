@@ -11,7 +11,7 @@ const Home = () => {
         </div>
         <div className="home__right">
           <p>Hello There!</p>
-          <h1>zainsci Here.</h1>
+          <h1>zain(sci) Here.</h1>
           <p>
             I am a self taught Web Developer and work mostly with Python, Flask,
             JavaScript and React. Your can find me on{" "}
