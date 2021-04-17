@@ -2,7 +2,7 @@ import Layout from "../components/layout";
 
 const Home = () => {
   return (
-    <Layout>
+    <Layout title="Home">
       <div className="home">
         <div className="home__left">
           <div className="home__left__img">
