@@ -1,0 +1,24 @@
+.contact {
+  width: 100%;
+  max-width: $maxWidth-lg;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2rem;
+  padding: $spacing10 * 2 0;
+
+  p {
+    margin: 0;
+    margin-bottom: $spacing6;
+  }
+
+  a {
+    color: $primary;
+    text-decoration: none;
+
+    &:hover {
+      color: lighten($color: $primary, $amount: 30);
+    }
+  }
+}
