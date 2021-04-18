@@ -20,5 +20,8 @@ html,
 }
 
 main {
+  width: 100%;
+  max-width: $maxWidth-lg;
+  margin: auto;
   flex-grow: 1;
 }
