@@ -57,12 +57,16 @@ const Projects = () => {
         {projects ? (
           projects.map((project) => {
             return (
-              <div className="project" key={project.name}>
+              <div className="project" key={project.name + Math.random()}>
                 <h1 className="project__name">{project.name}</h1>
                 <p className="project__description">{project.description}</p>
                 <div className="project__tags">
                   {project.tags.map((tag) => {
-                    return <div className="project__tag">{tag}</div>;
+                    return (
+                      <div className="project__tag" key={tag}>
+                        {tag}
+                      </div>
+                    );
                   })}
                 </div>
                 <a className="project__github" href={project.github}>
