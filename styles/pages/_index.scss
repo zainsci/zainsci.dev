@@ -43,7 +43,7 @@
         color: $primary;
 
         &:hover {
-          color: lighten($color: $primary, $amount: 30);
+          color: RGBA($primary, 0.4);
         }
       }
     }

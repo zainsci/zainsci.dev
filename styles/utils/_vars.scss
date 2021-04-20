@@ -19,5 +19,6 @@ $maxWidth-sm: 38rem;
 $font-heading: "Righteous", cursive;
 $font-text: "Montserrat", sans-serif;
 
-$primary: $purple;
-$text: $dark;
+$primary: var(--purple);
+$secondary: var(--blue);
+$text: var(--dark);

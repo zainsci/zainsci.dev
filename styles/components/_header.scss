@@ -46,7 +46,7 @@
     color: $text;
 
     &:hover {
-      color: lighten($color: $text, $amount: 30);
+      color: RGBA($text, 0.4);
     }
   }
 }
