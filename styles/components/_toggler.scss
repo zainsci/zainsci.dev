@@ -1,0 +1,22 @@
+.toggler {
+  width: $spacing6;
+  height: $spacing6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $text;
+
+  a {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: currentColor;
+      color: currentColor;
+    }
+  }
+}

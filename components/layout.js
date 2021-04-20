@@ -2,8 +2,22 @@ import Head from "next/head";
 
 import Header from "./header";
 import Footer from "./footer";
+import { useEffect } from "react";
 
 const Layout = ({ children, title }) => {
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const theme = localStorage.getItem("theme");
+
+      if (theme) {
+        document.body.className = theme;
+      } else {
+        window.localStorage.setItem("theme", "light");
+        document.body.className = "light";
+      }
+    }
+  }, []);
+
   return (
     <>
       <Head>

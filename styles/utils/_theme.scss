@@ -10,27 +10,29 @@ $themes: (
       "oragne": #f66a0a,
       "gray": #6a737d,
       "dark": #24292e,
+      "background": #f6f8fa,
     ),
   ),
   "dark": (
     "colors": (
-      "red" #da3633,
-      "blue" #1f6feb,
-      "green" #238636,
-      "yellow" #9e6a03,
-      "pink" #bf4b8a,
-      "purple" #8957e5,
-      "oragne" #bd561d,
-      "gray" #484f58,
-      "dark" #c9d1d9,
+      "red": #da3633,
+      "blue": #1f6feb,
+      "green": #238636,
+      "yellow": #9e6a03,
+      "pink": #bf4b8a,
+      "purple": #8957e5,
+      "oragne": #bd561d,
+      "gray": #484f58,
+      "dark": #c9d1d9,
+      "background": #090c10,
     ),
   ),
 );
 
 @each $theme, $theme-vars in $themes {
   .#{$theme} {
-    @each $name, $colors in $theme-vars {
-      @each $_, $color in $colors {
+    @each $_, $colors in $theme-vars {
+      @each $name, $color in $colors {
         --#{$name}: #{$color};
       }
     }

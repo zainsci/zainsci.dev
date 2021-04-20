@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Toggler from "./toggler";
 
 const Header = () => {
   return (
@@ -26,13 +27,8 @@ const Header = () => {
               <a className="nav__link">Contact</a>
             </Link>
           </li>
-          <li
-            className="nav__item"
-            style={{
-              display: "none",
-            }}
-          >
-            <button>D</button>
+          <li className="nav__item">
+            <Toggler />
           </li>
         </ul>
       </nav>
