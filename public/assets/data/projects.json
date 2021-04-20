@@ -1,0 +1,46 @@
+[
+  {
+    "name": "Calender",
+    "description": "Dark-Themed vscode-Like Calendar built with Vanilla JS and Electron",
+    "github": "https://github.com/zainsci/Calendar",
+    "tags": ["JavaScript", "Electron", "HTML", "CSS"]
+  },
+  {
+    "name": "GReddit",
+    "description": "Gmail-looklike Reddit using Reddit API and TailWind CSS",
+    "github": "https://github.com/zainsci/g-reddit",
+    "tags": ["JavaScript", "React", "TailWind", "HTML", "CSS"]
+  },
+  {
+    "name": "Twitter-Clone",
+    "description": "Twitter Clone built with React and Bootstrap",
+    "github": "https://github.com/zainsci/twitter-clone",
+    "site": "nifty-meitner-589854.netlify.app/",
+    "tags": ["JavaScript", "React", "Bootstrap", "HTML", "CSS"]
+  },
+  {
+    "name": "Notes",
+    "description": "A CRUD Application built with Flask and Bootstrap",
+    "github": "https://github.com/zainsci/Notes",
+    "tags": ["Python", "Flask", "Bootstrap", "HTML", "CSS"]
+  },
+  {
+    "name": "Vue-Blog",
+    "description": "A Blog template built with VueJs",
+    "github": "https://github.com/zainsci/vue-blog",
+    "tags": ["JavaScript", "VueJS", "HTML", "CSS"]
+  },
+  {
+    "name": "Ramadan",
+    "description": "Ramadan Themed Landing Page for Celebrating The Month Of Ramadan",
+    "github": "https://github.com/zainsci/ramadan",
+    "site": "zainsci.github.io/ramadan",
+    "tags": ["JavaScript", "NextJS", "HTML", "CSS"]
+  },
+  {
+    "name": "Swarm",
+    "description": "Custom StartPage / NewTab Page with Chrome Extension",
+    "github": "https://github.com/zainsci/swarm",
+    "tags": ["ChromeExtension", "JavaScript", "HTML", "CSS"]
+  }
+]
