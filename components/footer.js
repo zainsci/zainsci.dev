@@ -1,5 +1,9 @@
 const Footer = () => {
-  return <footer>© zainsci {new Date().getFullYear()} </footer>;
+  return (
+    <footer>
+      <p>© zainsci {new Date().getFullYear()}</p>
+    </footer>
+  );
 };
 
 export default Footer;
