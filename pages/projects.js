@@ -11,7 +11,7 @@ const Projects = () => {
       .then((data) => {
         setProjects(data);
       });
-  });
+  }, []);
 
   const githubIcon = (
     <svg
