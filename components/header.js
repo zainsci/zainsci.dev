@@ -2,6 +2,14 @@ import Link from "next/link";
 import Toggler from "./toggler";
 
 const Header = () => {
+  let active;
+
+  if (typeof window !== "undefined") {
+    active = window.location.pathname;
+  } else {
+    active = "/";
+  }
+
   return (
     <header className="header">
       <h2 className="zainsci">zainsci</h2>
@@ -9,7 +17,9 @@ const Header = () => {
         <ul className="nav__list">
           <li className="nav__item">
             <Link href="/">
-              <a className="nav__link active">Home</a>
+              <a className={"nav__link" + (active === "/" ? " active" : "")}>
+                Home
+              </a>
             </Link>
           </li>
           <li className="nav__item">
@@ -19,12 +29,24 @@ const Header = () => {
           </li>
           <li className="nav__item">
             <Link href="/projects">
-              <a className="nav__link">Projects</a>
+              <a
+                className={
+                  "nav__link" + (active === "/projects" ? " active" : "")
+                }
+              >
+                Projects
+              </a>
             </Link>
           </li>
           <li className="nav__item">
             <Link href="/contact">
-              <a className="nav__link">Contact</a>
+              <a
+                className={
+                  "nav__link" + (active === "/contact" ? " active" : "")
+                }
+              >
+                Contact
+              </a>
             </Link>
           </li>
           <li className="nav__item">
