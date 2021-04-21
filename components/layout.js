@@ -5,6 +5,10 @@ import Footer from "./footer";
 import { useEffect } from "react";
 
 const Layout = ({ children, title }) => {
+  typeof document !== "undefined"
+    ? (document.documentElement.lang = "en-us")
+    : null;
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       const theme = localStorage.getItem("theme");

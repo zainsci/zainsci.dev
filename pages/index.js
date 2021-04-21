@@ -18,7 +18,7 @@ const Home = () => {
             <a
               href="https://www.twitter.com/zainsci"
               target="_blank"
-              rel="nereferrer"
+              rel="nereferrer noopener"
             >
               Twitter
             </a>
@@ -26,7 +26,7 @@ const Home = () => {
             <a
               href="https://www.github.com/zainsci"
               target="_blank"
-              rel="nereferrer"
+              rel="nereferrer noopener"
             >
               Github
             </a>{" "}
@@ -34,7 +34,7 @@ const Home = () => {
             <a
               href="https://www.instagram.com/zainsci"
               target="_blank"
-              rel="nereferrer"
+              rel="nereferrer noopener"
             >
               Instagram
             </a>

@@ -28,7 +28,7 @@ const Contact = () => {
           <a
             href="https://twitter.com/zainsci"
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer noopener"
           >
             Twitter Account
           </a>

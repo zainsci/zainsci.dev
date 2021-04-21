@@ -73,7 +73,12 @@ const Projects = () => {
                   {githubIcon}
                 </a>
                 {project.site ? (
-                  <a className="project__site" href={project.site}>
+                  <a
+                    className="project__site"
+                    href={project.site}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
                     {linkIcon}
                   </a>
                 ) : null}

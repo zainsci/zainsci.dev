@@ -23,7 +23,12 @@ const Header = () => {
             </Link>
           </li>
           <li className="nav__item">
-            <a href="/blog" className="nav__link">
+            <a
+              href="https://zainsci.github.io/blog"
+              className="nav__link"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
               Blog
             </a>
           </li>
