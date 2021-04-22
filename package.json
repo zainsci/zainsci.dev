@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "deploy": "next build && next export && gh-pages -d out -r https://github.com/zainsci/zainsci.github.io"
+    "deploy": "next build && next export && touch out/.nojekyll && gh-pages -d out -r https://github.com/zainsci/zainsci.github.io -t true"
   },
   "dependencies": {
     "next": "^10.1.3",
