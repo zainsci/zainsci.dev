@@ -26,6 +26,8 @@ const Layout = ({ children, title }) => {
     <>
       <Head>
         <title>{title} - zainsci</title>
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="manifest" href="/manifest.json" />
       </Head>
       <Header />
 
