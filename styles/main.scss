@@ -11,6 +11,8 @@
 @import "./pages/contact";
 @import "./pages/projects";
 
+@import "./utils/media";
+
 body,
 html,
 #__next {
@@ -20,6 +22,7 @@ html,
   display: flex;
   flex-direction: column;
   background-color: $background;
+  overflow-x: hidden;
 }
 
 main {

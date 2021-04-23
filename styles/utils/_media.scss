@@ -1,0 +1,53 @@
+@media (max-width: $maxWidth-lg + 2.5rem) {
+  main,
+  header {
+    max-width: $maxWidth-md !important;
+  }
+}
+
+@media (max-width: $maxWidth-md + 2.5rem) {
+  main,
+  header {
+    max-width: $maxWidth-sm !important;
+    padding: 0 $spacing4;
+  }
+
+  .home {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    & * {
+      margin: 0;
+    }
+
+    &__left,
+    &__right {
+      width: 100%;
+      margin: $spacing4;
+      height: fit-content;
+      text-align: center;
+
+      & h1 {
+        font-size: 3rem;
+        margin-bottom: $spacing4;
+      }
+    }
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+    margin: $spacing8 $spacing4;
+  }
+
+  .contact {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: $maxWidth-sm + 2.5rem) {
+  main,
+  header {
+    max-width: 26rem !important;
+  }
+}
