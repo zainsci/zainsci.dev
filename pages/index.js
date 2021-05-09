@@ -14,7 +14,7 @@ const Home = () => {
           <h1>zain(sci) Here.</h1>
           <p>
             I am a self taught Web Developer and work mostly with Python, Flask,
-            JavaScript and React. Your can find me on{" "}
+            JavaScript and React. You can find me on{" "}
             <a
               href="https://www.twitter.com/zainsci"
               target="_blank"
