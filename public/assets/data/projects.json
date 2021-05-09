@@ -1,6 +1,6 @@
 [
   {
-    "name": "Calender",
+    "name": "Calendar",
     "description": "Dark-Themed vscode-Like Calendar built with Vanilla JS and Electron",
     "github": "https://github.com/zainsci/Calendar",
     "tags": ["JavaScript", "Electron", "HTML", "CSS"]
