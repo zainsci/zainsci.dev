@@ -56,7 +56,7 @@ const Toggler = () => {
   );
 
   return (
-    <div className="toggler">
+    <div className="theme__toggler">
       <a onClick={changeTheme}>{theme === "light" ? moonIcon : sunIcon}</a>
     </div>
   );
