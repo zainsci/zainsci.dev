@@ -8,6 +8,28 @@
   padding: 0 $spacing5;
   min-height: $spacing10;
 
+  &__left {
+    height: $spacing10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .nav__toggler {
+      display: none;
+      cursor: pointer;
+    }
+    .theme__toggler {
+      display: none;
+    }
+  }
+
+  &__right {
+    transition: all 0.3s ease;
+    @media (min-width: $maxWidth-sm + 2.5rem) {
+      height: $spacing10 !important;
+    }
+  }
+
   .zainsci {
     font-family: $font-heading;
   }
