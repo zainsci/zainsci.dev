@@ -6,7 +6,12 @@ const Home = () => {
       <div className="home">
         <div className="home__left">
           <div className="home__left__img">
-            <img src="/assets/images/me.jpg" alt="zainsci" />
+            <img
+              src="/assets/images/me.jpg"
+              alt="zainsci"
+              width="576px"
+              height="576px"
+            />
           </div>
         </div>
         <div className="home__right">

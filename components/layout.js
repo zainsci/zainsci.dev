@@ -28,6 +28,7 @@ const Layout = ({ children, title }) => {
         <title>{title} - zainsci</title>
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="manifest" href="/manifest.json" />
+        <link rel="preload" href="fonts.googleapis.com" />
 
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
