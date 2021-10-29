@@ -1,12 +1,12 @@
 {
-  "name": "zainsci.github.io",
+  "name": "v1",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "deploy": "next build && next export && touch out/.nojekyll && gh-pages -d out -r https://github.com/zainsci/zainsci.github.io -t true"
+    "deploy": "next build && next export && touch out/.nojekyll && gh-pages -d out -r https://github.com/zainsci/v1 -t true"
   },
   "dependencies": {
     "next": "^10.1.3",
