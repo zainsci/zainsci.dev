@@ -1,0 +1,96 @@
+.hero {
+  display: flex;
+
+  &__left,
+  &__right {
+    flex: 1;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    padding-right: 4rem;
+
+    .logo {
+      font-size: 3rem;
+      color: var(--primary);
+      margin: 0;
+    }
+  }
+
+  &__right {
+    height: 100%;
+    @include flex-center;
+  }
+
+  &__image {
+    width: 16rem;
+    height: 24rem;
+    position: relative;
+
+    &__wrapper,
+    &::before {
+      width: 16rem;
+      height: 24rem;
+      overflow: hidden;
+      border-radius: $b-radius-lg;
+      position: absolute;
+    }
+
+    &__wrapper {
+      z-index: 10;
+      position: relative;
+    }
+
+    &::before {
+      content: "";
+      background-color: var(--primary);
+      z-index: 9;
+    }
+
+    img {
+      height: 100%;
+      width: auto;
+      position: absolute;
+      left: -2rem;
+    }
+  }
+
+  @media (max-width: ($width-lg + 2rem)) {
+    flex-direction: column-reverse;
+
+    &__left {
+      padding: 0;
+    }
+    &__right {
+      justify-content: flex-start;
+    }
+
+    &__image,
+    &__image__wrapper,
+    &__image::before {
+      width: 10rem;
+      height: 10rem;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      left: 0;
+    }
+  }
+}
+
+.tech__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0;
+  padding: 0;
+
+  li {
+    &::before {
+      content: "🌟";
+      margin-right: $spacing-sm;
+    }
+  }
+}

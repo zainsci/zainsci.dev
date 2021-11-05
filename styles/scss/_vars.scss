@@ -1,0 +1,65 @@
+$black: #000000;
+$white: #ffffff;
+
+$dark: #111;
+$light: #eff2f1;
+
+$bg-color: $dark;
+$text: $white;
+$text-dim: rgba($text, 0.6);
+
+$base: 0.25rem;
+
+$font-sm: $base * 3;
+$font-md: $base * 4;
+$font-lg: $base * 5;
+$font-xl: $base * 6;
+
+$width-sm: $base * 4 * 36;
+$width-md: $base * 4 * 42;
+$width-lg: $base * 4 * 56;
+$width-xl: $base * 4 * 64;
+
+$spacing-sm: $base * 2;
+$spacing-md: $base * 4;
+$spacing-lg: $base * 6;
+$spacing-xl: $base * 10;
+
+$b-radius-sm: $base;
+$b-radius-md: $base * 2;
+$b-radius-lg: $base * 4;
+
+$transition-link: 0.4s ease-in;
+$padding-btn: 0.25rem 0.75rem;
+
+$hero-img-w: $base * 4 * 30;
+
+:root {
+  --red: #ed5c5a;
+  --green: #98c379;
+  --blue: #28a0ff;
+  --yellow: #e3b505;
+  --purple: #c64edd;
+
+  --primary: var(--blue);
+  --primary-rgb: 40, 160, 255;
+  --secondary: var(--purple);
+
+  --bg-color: #{$dark};
+  --text: #{$white};
+  --text-dim: #{rgba($white, 0.6)};
+
+  --hover-bg: #{rgba($white, 0.1)};
+  --border-color: #{rgba($white, 0.1)};
+}
+
+[data-theme="light"] {
+  --blue: #007dff;
+
+  --bg-color: #{$light};
+  --text: #{$black};
+  --text-dim: #{rgba($black, 0.6)};
+
+  --hover-bg: #{rgba($black, 0.05)};
+  --border-color: #{rgba($black, 0.1)};
+}

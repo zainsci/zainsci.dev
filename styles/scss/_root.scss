@@ -1,0 +1,44 @@
+html,
+body,
+#__next {
+  min-width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-dim);
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Righteous", sans-serif;
+  font-weight: inherit;
+  color: var(--text);
+}
+
+ul {
+  list-style-type: none;
+
+  a {
+    cursor: pointer;
+  }
+}
+
+.hero,
+.projects,
+.dashboard,
+.blog {
+  padding: 0 $spacing-lg;
+  margin-right: 8px;
+}

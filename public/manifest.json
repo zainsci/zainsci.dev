@@ -1,10 +1,10 @@
 {
-  "name": "zainsci Portfolio",
+  "name": "zainsci's Portfolio",
   "short_name": "zainsci",
   "start_url": ".",
   "display": "standalone",
-  "background_color": "#f6f8fa",
-  "description": "Portfolio Website of Zain(sci).",
+  "background_color": "#fff",
+  "description": "Portfolio Website of zain[sci].",
   "icons": [
     {
       "src": "assets/images/icons/favicon48.png",

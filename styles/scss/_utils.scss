@@ -1,0 +1,22 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: $width-xl;
+  margin: 0 auto;
+  // padding: 0 $spacing-lg;
+
+  @media (max-width: $width-xl) {
+    max-width: $width-lg;
+  }
+  @media (max-width: $width-lg) {
+    max-width: $width-md;
+  }
+  @media (max-width: $width-md) {
+    max-width: $width-sm;
+  }
+}
