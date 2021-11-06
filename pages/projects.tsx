@@ -15,7 +15,7 @@ interface ProjectProps {
 
 const Projects = ({ projects }) => {
   return (
-    <Layout title="Contact">
+    <Layout title="Projects">
       <div className="projects">
         <h1>Some of the projects I have worked on.</h1>
         <div className="projects__grid">
