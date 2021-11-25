@@ -5,10 +5,11 @@ import { ContextProvider } from "context/index"
 
 import "styles/normalize.css"
 import "styles/master.scss"
+import "styles/syntax.css"
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider>
+    <ThemeProvider defaultTheme="dark">
       <ContextProvider>
         <Component {...pageProps} />
       </ContextProvider>

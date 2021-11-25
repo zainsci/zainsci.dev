@@ -47,10 +47,10 @@ $hero-img-w: $base * 4 * 30;
 
   --bg-color: #{$dark};
   --text: #{$white};
-  --text-dim: #{rgba($white, 0.6)};
+  --text-dim: #{rgba($white, 0.7)};
 
   --hover-bg: #{rgba($white, 0.1)};
-  --border-color: #{rgba($white, 0.1)};
+  --border-color: #{rgba($white, 0.2)};
 }
 
 [data-theme="light"] {
@@ -58,8 +58,8 @@ $hero-img-w: $base * 4 * 30;
 
   --bg-color: #{$light};
   --text: #{$black};
-  --text-dim: #{rgba($black, 0.6)};
+  --text-dim: #{rgba($black, 0.7)};
 
-  --hover-bg: #{rgba($black, 0.05)};
-  --border-color: #{rgba($black, 0.1)};
+  --hover-bg: #{rgba($black, 0.1)};
+  --border-color: #{rgba($black, 0.2)};
 }

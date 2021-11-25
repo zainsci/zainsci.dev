@@ -5,13 +5,7 @@ import { motion } from "framer-motion"
 
 import Layout from "components/layout"
 import Project from "components/project"
-
-interface ProjectProps {
-  name: string
-  description: string
-  github: string
-  tags: []
-}
+import { ProjectProps } from "lib/types"
 
 const Projects = ({ projects }) => {
   return (

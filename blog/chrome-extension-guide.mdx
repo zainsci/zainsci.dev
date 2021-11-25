@@ -1,0 +1,174 @@
+---
+title: "Beginners Guide to Developing Chrome Extensions"
+summary: "This post will teach you everthing you need to build your own chrome extensions from a very simple one to as complex as it can get."
+slug: "chrome-extension-guide"
+date: "2021-11-07"
+---
+
+Ever since I started programming in 2019 I think I have built more chrome extensions than simple websites or other programs and that is why I think I can teach you guys to build your own chrom extension too. The only thing that you need to know to get started is basic understanding of HTML, CSS and JS and you are good to go. I also will be assuming that you know what a chrome extension is and why we need extensions.
+
+I will get straight to the point and to get start all you need is a simple code editor and the chrome browser. Other browser may work as well but I haven't worked with any other than the Chrome. I will be using vscode for this but you can use any editor you want.
+
+## Manifest
+
+Every chrome extension must have a `manifest.json` file. This file tells the browser about the extension, who coded it, why, and what it will be doing and so on. Basically it contains all the metadata about your chrome extension.
+This file contains a JSON object with all the metadata of the extension and following is the sample of it.
+
+```json
+{
+  "manifest_version": 3,
+  "name": "my-chrome-extension",
+  "description": "This is my chrome extension which will do xyz.",
+  "version": "0.1"
+}
+```
+
+I have always worked with manifest version **2** and at the time of writing this article the latest version of the manifest is **3** and so while writing this article I am also learning about the little or maybe big differences between these two versions.
+
+Manifest also contains other properties like what browser apis does it needs access to and what files are associated with it but we will learn about them as we use them in this example.
+
+## Scripts
+
+There are mainly and maybe only two kinds of scripts used in a chrome extension, **Content** and **Background** scripts.
+
+### Background Scripts
+
+Background scripts listen to browser events like opening a tab or closing it, reloading a page etc and react to them accordingly. These scripts listen to these events in the background using `service_worker` that you specify in the manifest.
+
+```json
+{
+  "...": "...",
+  "background": {
+    "service_worker": "background.js",
+    "type": "module" // use if importing code in the background.js
+  }
+}
+```
+
+> `service_worker` must be in the root directory along with the manifest.json
+
+In the background scripts we can use evern listeners to reat to certain events. For example we can listen for the event which is fired when a new tab is created in chrome.
+
+```js
+// background.js
+chrome.tabs.onCreated.addListener(() => {
+  // Do something here
+})
+```
+
+Or when a tab is closed.
+
+```js
+// background.js
+chrome.tabs.onRemoved.addListener(() => {
+  // Do something here
+})
+```
+
+### Content Scripts
+
+Content Scripts run in the context of the webpage and can manipulate the DOM. Just like a website uses JS to add interactivity, we can also add additional interactivity to it using our chrome extension's content scripts.
+We define in the manifest what content scripts to run and when. Consider the example below.
+
+```json
+{
+  "...": "...",
+  "content_scripts": [
+    {
+      "matches": ["https://*.google.com/*"],
+      "css": ["styles.css"],
+      "js": ["content-script.js"]
+    }
+  ]
+}
+```
+
+In the manifest, the sciprts are registered with the `content_scripts` field and this field is a list of objects. Each object can have JS or CSS or both but they must have match patterns in the `matches` field if they are intended to run automatically.
+
+You can also execute content sciprts without them registering in the manifest and at any time you want. But instead of registering the scripts you have to register for permissions.
+
+Before using an API from chrome you have to ask for permission to use the api and to do that you have to define the permissions in manifest like the following.
+
+```json
+{
+  "...": "...",
+  "permissions": ["tabs", "activeTab", "http://*/*", "https://*/*"]
+}
+```
+
+Here I have asked for permissions to tabs api as well for the domains with both http and https protocol. Now we can execute scripts on any page at anytime on any event we want. And we do that by the following way.
+
+```js
+// background.js
+chrome.scripting.executeScript({
+  files: ["content-script.js"],
+})
+```
+
+> You cannot execute content-scripts on any `chrome://` page
+
+## Action
+
+Action API is used to control the toolbar button on the top right corner of the browser. We can use this api to run a script when clicked or can display a popup when clicked.
+
+```json
+{
+  "...": "...",
+  "action": {
+    "default_icon": {
+      "16": "images/icon16.png",
+      "24": "images/icon24.png",
+      "32": "images/icon32.png"
+    },
+    "default_title": "Open Popup",
+    "default_popup": "popup.html"
+  }
+}
+```
+
+Here `action` api is what is used to react to actions on the icon that appears on the top right corner of the browser window. `default_icon` is what icon is displayed, `default_title` is what text will it show when hover over the icon, and `default_popup` is what html file will it render when the icon is clicked.
+
+You can also access the browser action using the `chrome.action` api in the background scripts of the chrome extension.
+Here because of `default_popup` key, clicking the action will only open the popup and will work on `chrome.action` so in order to use `chrome.action` you have to remove the `default_popup` from the manifest file.
+
+## Messaging
+
+Somethimes it may happen that we need to communicate between background scripts and content scripts. In my case the first time I needed to do that was to store some data to be used on two different tabs. Like I will be collecting data from one tab send this data to the background script and wait for the message from the other tab and send that data to it for use.
+Another example of using this to be fetching data from some external source beforehand and sending that data from background script to content scripts when needed.
+
+Send a message from content script to a background script.
+
+```js
+chrome.runtime.sendMessage({ type: "DATA", data: data }, (res) => {
+  console.log(res.message)
+})
+```
+
+We can send the message from background script to content script but with this we have to specify the tab to which the message should be sent. Following is example of sending a message from extension to a content script.
+
+```js
+chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+  chrome.tabs.sendMessage(tabs[0].id, { type: "DATA", data: data }, (res) => {
+    console.log(res.message)
+  })
+})
+```
+
+Listening for the message on the receiving end looks simillar.
+
+```js
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  if (request.type === "DATA") {
+    // Do something with the data
+    sendResponse({ message: "DATA RECEIVED!" })
+  }
+})
+```
+
+## Conclusion
+
+I think these are all the things that can help you build almost any extension you want. Almost!. To learn more about chrome extensions development read the [documentation](https://developer.chrome.com/docs/extensions/reference/) and lookup other apis. The one api I think that is interesting to use is the alarm api that you can use to setup alarm on browser and do something when that alarm goes off.
+
+Also when encountring problems always remember that DuckDuckGo/Google is your friend. Search for the problem and you will find out that you are not the only one with the same problem. There are thousands of communites out there that are willing to help you solve your problem.
+
+That's it for today and if anyone read this to the end please give feedback about it and thanks for reading.

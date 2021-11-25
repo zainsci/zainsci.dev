@@ -7,20 +7,24 @@
   align-items: center;
   z-index: 100000;
   padding: 0 $spacing-lg;
+}
 
-  .theme__toggler {
-    margin-left: auto;
+.theme__toggler {
+  margin-left: auto;
 
-    a {
-      cursor: pointer;
-      padding: 0.5rem;
-      border-radius: $b-radius-sm;
-      @include flex-center;
+  a {
+    cursor: pointer;
+    padding: 0.4rem;
+    border-radius: $b-radius-sm;
+    @include flex-center;
+    transition: 0.2s ease;
 
-      &:hover {
-        background-color: var(--hover-bg);
-      }
-      &:hover svg {
+    &:hover,
+    &:active {
+      background-color: var(--hover-bg);
+      outline: 2px solid var(--border-color);
+
+      svg {
         color: var(--text);
       }
     }
