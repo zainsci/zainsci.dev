@@ -14,6 +14,10 @@ export interface Post {
   date?: Date | string
   slug?: string
   summary?: string
+  readingTime?: {
+    text?: string
+    [key: string]: any
+  }
 }
 
 export interface BundledMdx {

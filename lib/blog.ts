@@ -3,6 +3,7 @@ import path from "path"
 import matter from "gray-matter"
 import { remark } from "remark"
 import html from "remark-html"
+import readingTime from "reading-time"
 
 import { Post } from "lib/types"
 
@@ -43,6 +44,9 @@ export function getPostBySlug(slug: string, fields: string[]): Post {
         break
       case "content":
         items[field] = content
+        break
+      case "readingTime":
+        items[field] = readingTime(content)
         break
     }
   })

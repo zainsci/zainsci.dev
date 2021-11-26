@@ -1,4 +1,4 @@
-import { useMemo } from "react"
+import React, { useMemo } from "react"
 import { bundleMDX } from "mdx-bundler"
 import { getMDXComponent } from "mdx-bundler/client"
 import rehypePrism from "rehype-prism-plus"
@@ -7,7 +7,7 @@ import Layout from "components/layout"
 import { Post } from "lib/types"
 import { getAllPosts, getPostBySlug } from "lib/blog"
 
-const BlogPost: React.FC<Post> = (post) => {
+const BlogPost: React.FC<Post> = (post: Post) => {
   const Component = useMemo(
     () => getMDXComponent(post.content.code),
     [post.content]
@@ -26,7 +26,7 @@ const BlogPost: React.FC<Post> = (post) => {
               day: "numeric",
             })}
           </div>
-          <div className="post__meta__readtime"></div>
+          <div className="post__meta__readtime">{post.readingTime.text}</div>
         </div>
         <p className="post__content">
           <Component />
@@ -39,7 +39,13 @@ const BlogPost: React.FC<Post> = (post) => {
 export default BlogPost
 
 export async function getStaticProps({ params }) {
-  const post = getPostBySlug(params.slug, ["title", "slug", "content", "date"])
+  const post = getPostBySlug(params.slug, [
+    "title",
+    "slug",
+    "content",
+    "date",
+    "readingTime",
+  ])
   const content = await bundleMDX(post.content, {
     xdmOptions(options) {
       options.rehypePlugins = [...(options?.rehypePlugins ?? []), rehypePrism]

@@ -59,6 +59,11 @@
   @media (max-width: ($width-lg + 2rem)) {
     flex-direction: column-reverse;
 
+    .logo {
+      line-height: 1.25;
+      margin-top: $spacing-md;
+    }
+
     &__left {
       padding: 0;
     }
@@ -92,5 +97,9 @@
       content: "🌟";
       margin-right: $spacing-sm;
     }
+  }
+
+  @media (max-width: ($width-lg + 2rem)) {
+    grid-template-columns: 1fr 1.5fr;
   }
 }

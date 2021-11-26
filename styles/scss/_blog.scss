@@ -43,13 +43,17 @@
     }
     h4 {
       margin: 0;
-      margin-bottom: $spacing-sm;
       font-size: 1.25rem;
       line-height: 1.5;
     }
     p {
       margin: 0;
     }
+  }
+
+  &__meta {
+    display: flex;
+    justify-content: space-between;
   }
 
   code {
@@ -87,6 +91,15 @@
       &:active {
         outline: none;
       }
+    }
+
+    &__title {
+      margin-top: 0;
+      line-height: 1.25;
+    }
+
+    &__meta {
+      flex-direction: column;
     }
   }
 }

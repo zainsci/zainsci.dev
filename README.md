@@ -1,4 +1,4 @@
-# zainsci.github.io - v2
+# zainsci's personal portfolio
 
 Version 2.0 of zainsci.github.io
 
@@ -8,3 +8,5 @@ Version 2.0 of zainsci.github.io
 - SASS
 - TypeScript
 - Framer Motion
+- MDX
+- Deployed On Vercel
