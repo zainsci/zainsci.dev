@@ -6,6 +6,7 @@ import rehypePrism from "rehype-prism-plus"
 import Layout from "components/layout"
 import { Post } from "lib/types"
 import { getAllPosts, getPostBySlug } from "lib/blog"
+import MDXComponents from "components/MDX"
 
 const BlogPost: React.FC<Post> = (post: Post) => {
   const Component = useMemo(
@@ -28,8 +29,8 @@ const BlogPost: React.FC<Post> = (post: Post) => {
           </div>
           <div className="post__meta__readtime">{post.readingTime.text}</div>
         </div>
-        <p className="post__content">
-          <Component />
+        <p className="post__content mdx">
+          <Component components={MDXComponents} />
         </p>
       </div>
     </Layout>
