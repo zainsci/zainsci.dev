@@ -1,6 +1,6 @@
 # zainsci's personal portfolio
 
-Version 2.0 of zainsci.github.io
+Version 2.0 of my personal portfolio.
 
 ## Tech used
 
