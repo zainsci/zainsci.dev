@@ -1,0 +1,138 @@
+---
+title: "Managing Your .dotfiles"
+summary: "The easiest way you and I can manage our dot files."
+date: "2021-12-31"
+slug: "managing-your-dotfiles"
+---
+
+<Image
+  src={`/assets/images/managing-your-dotfiles/cover.jpg`}
+  alt={`dotfile post cover`}
+  srcRef={`Unsplash`}
+  refLink={`https://unsplash.com/photos/vpOeXr5wmR4`}
+/>
+
+Recently I switched from Windows to Ubuntu and in the process of doing so I found out that I have to just do all of the config for all the software that I used on Windows again from scratch. For example, I use vscode for all the coding and I had a settings.json file for it with like 50+ rules in it which I had added on the course of about a year or so and now I have to add all those one by one when I am in need of them.
+
+Not to repeat this mistake again I will be creating a git repo of all my dotfiles and config files and will show you the process of how to manage them.
+
+So how should we be managing our dotfiles. Well I don't know and there is no right answer to that question. Everyone has its own way of doing that and for good reasons. All we can do is learn from them and do it in a way that best suit our means.
+
+To start it all first I will be creating a new directory in the home directory and will call it `.dotfiles` as everyone else does.
+
+```bash
+➜ ~ mkdir .dotfiles
+➜ ~ ls -a | grep dot
+.dotfiles
+```
+
+Now I will be adding a README.md file to `.dotfiles` and will initialize a git repo along with it.
+
+```bash
+➜ ~ cd .dotfiles
+➜ .dotfiles echo "# zainsci's .dotfiles" >> README.md
+➜ .dotfiles ls
+README.md
+➜ .dotfiles cat README.md
+# zainsci's .dotfiles
+```
+
+Init a new git repo and commit all these changes with `first commit` as the commit message and then we will add our dotfiles to this repo.
+
+```bash
+➜ .dotfiles git init
+Initialized empty Git repository in /home/zain/.dotfiles/.git/
+➜ .dotfiles git:(master) ✗ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	README.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+➜ .dotfiles git:(master) ✗ git add README.md
+➜ .dotfiles git:(master) ✗ git commit -m "first commit"
+[master (root-commit) 44fffdc] first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+➜ .dotfiles git:(master) git status
+On branch master
+nothing to commit, working tree clean
+```
+
+Now that we have our git repo setup we can now add our dotfiles and commit them aswell. Before we move the dotfiles from thier original location we have to keep one thing in mind that generally dot files are config files and there is a reason why they are where they are.
+
+When a program like bash or vim is opened by the user, they look for the config files in the home dir of the user and so when we move the config files from the home directory the program when looking for the config fails to find it, will create a new file with default configurations in its place.
+
+This will cause the program to run in its default config and we will lose all of our custom config which is not what we want and certainly is not why we are doing all this management for. So solve this problem there is something called symlink. A symlink is just like a shortcut in Windows. We create a link of the original file in the home dir so now when the program looks for the config file in the home dir it will find a symlink in its place which points to the original file which then is loaded by the program. So problem solved.
+
+And now to moving the dotfiles to the git repo.
+
+```bash
+➜ ~ mv .gitconfig .dotfiles
+➜ ~ mv .zshrc .dotfiles
+➜ ~ mv .bashrc .dotfiles
+➜ ~ cd .dotfiles
+➜ .dotfiles git:(master) ✗ ls
+README.md
+➜ .dotfiles git:(master) ✗ ls -a
+.  ..  .bashrc  .git  .gitconfig  README.md  .zshrc
+```
+
+Creating the symlinks to the original files in the home directory.
+
+```bash
+➜ ~ ln ./.dotfiles/.gitconfig .
+➜ ~ ln ./.dotfiles/.bashrc .
+➜ ~ ln ./.dotfiles/.zshrc .
+```
+
+Here `ln` is used to create the symlink of `./.dotfiles/.gitconfig` in the current dir `.` which is the home dir of the current user. Now to check that everthing is working fine we will open the `.dotfiles` dir and try to add and commit all the files to the repo.
+
+```bash
+➜  ~ cd .dotfiles
+➜  .dotfiles git:(master) ✗ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.bashrc
+	.gitconfig
+	.zshrc
+
+nothing added to commit but untracked files present (use "git add" to track)
+➜  .dotfiles git:(master) ✗ git add .
+➜  .dotfiles git:(master) ✗ git commit -m "Update: Add .gitconfig
+dquote> .bashrc and .zshrc"
+[master 8aaa302] Update: Add .gitconfig .bashrc and .zshrc
+ 3 files changed, 225 insertions(+)
+ create mode 100644 .bashrc
+ create mode 100644 .gitconfig
+ create mode 100644 .zshrc
+```
+
+Now I will check the git log to make sure that git used the email and name as it is mentioned in the `.gitconfig` file.
+
+```bash
+➜  .dotfiles git:(master) git log
+commit 8aaa302a2de629d1e5c166901d1e7ce4313e335a (HEAD -> master)
+Author: zainsci <60652827+zainsci@users.noreply.github.com>
+Date:   Wed Dec 29 23:27:40 2021 +0500
+
+    Update: Add .gitconfig
+    .bashrc and .zshrc
+
+commit 44fffdc2f3e43199cf1044484fe562d409f73f93
+Author: zainsci <60652827+zainsci@users.noreply.github.com>
+Date:   Mon Dec 27 23:34:58 2021 +0500
+
+    first commit
+```
+
+And this is the result that the moving of the config files to the `.dotfiles` dir, creating thier symlink as well as committing them to the repo has been successful. This is just a simple approach to manage the dotfiles that I learned from `~/.dotfiles in 100 seconds - Fireship` YouTube video. Follwoing are some of the very good articles and sources that show some very good ways to solve the same problem. Definately check them out.
+
+- [~/.dotfiles in 100 Seconds](https://youtu.be/r_MpUP6aKiQ)
+- [The best way to store your dotfiles: A bare Git repository](https://www.atlassian.com/git/tutorials/dotfiles)
+- [The best way to store your dotfiles: A bare Git repository **EXPLAINED**](https://www.ackama.com/what-we-think/the-best-way-to-store-your-dotfiles-a-bare-git-repository-explained/)
+- [Ask HN: What do you use to manage dotfiles?](https://news.ycombinator.com/item?id=11070797)
