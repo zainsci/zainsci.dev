@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap");
+.resume {
+  & * {
+    font-family: "Poppins", serif !important;
+    line-height: 1.25;
+  }
+  h1 {
+    font-family: "Righteous", sans-serif !important;
+  }
+
+  background-color: white;
+  color: #333 !important;
+  display: flex;
+  flex-direction: column;
+  width: 21cm;
+  height: 29.7cm;
+  margin: auto;
+  border: 1px solid white;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  ul {
+    margin: 0 !important;
+    padding: 0;
+    color: inherit;
+  }
+
+  h2,
+  h3 {
+    font-weight: 700;
+  }
+  h2,
+  p {
+    margin-bottom: 0.5rem !important;
+  }
+
+  li {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      margin-right: 0.2rem;
+    }
+  }
+}
+
+.head {
+  display: flex;
+  padding: 2rem;
+  justify-content: center;
+  align-items: center;
+
+  .portrait {
+    min-width: 10rem;
+    max-width: 10rem;
+    min-height: 10rem;
+    max-height: 10rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    margin-right: 2rem;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.contacts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+
+  ul {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #f3f3f3;
+    padding: 2rem;
+
+    li {
+      margin: 0.25rem 0;
+
+      a {
+        display: flex;
+        justify-content: flex-start;
+        align-content: center;
+
+        svg {
+          width: 1.25rem;
+          height: 1.25rem;
+          margin-right: 0.75rem;
+          color: var(--primary);
+        }
+      }
+    }
+  }
+}
+
+.body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 1rem 2rem;
+  gap: 2rem;
+
+  .work,
+  .certs,
+  .skills,
+  .achievements,
+  .langs,
+  .hobbies {
+    margin-bottom: 1rem;
+  }
+
+  .work {
+    h4,
+    ul,
+    &__status,
+    li {
+      margin-bottom: 0.5rem !important;
+    }
+    h4 {
+      opacity: 0.9;
+    }
+    &__status {
+      font-size: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      opacity: 0.7;
+    }
+  }
+
+  .skills {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      font-size: 0.8rem;
+      color: white;
+
+      li {
+        background-color: var(--primary);
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.5rem;
+        margin: 0.1rem;
+      }
+    }
+  }
+  .certs {
+    li {
+      display: block !important;
+    }
+  }
+
+  .hobbies {
+    ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    ul,
+    li {
+      margin: 0.25rem 0 !important;
+
+      svg {
+        width: 1.25rem;
+        height: 1.25rem;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  .achievements,
+  .langs,
+  .work,
+  .certs {
+    li {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+    li::before {
+      content: "⁕";
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+// @page {
+//   size: 21cm 29.7cm;
+//   margin: 15mm 20mm 15mm 20mm;
+//   /* change the margins as you want them to be. */
+// }
+
+// @media print {
+//   .resume {
+//     width: 21cm;
+//     height: 29.7cm;
+//     margin: 15mm 20mm 15mm 20mm;
+//     /* change the margins as you want them to be. */
+//   }
+// }
