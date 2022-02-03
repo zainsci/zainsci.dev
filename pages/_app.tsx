@@ -6,6 +6,7 @@ import { ContextProvider } from "context/index"
 import "styles/normalize.css"
 import "styles/master.scss"
 import "styles/syntax.css"
+import "styles/resume.scss"
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

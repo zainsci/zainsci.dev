@@ -8,6 +8,7 @@ const Nav = () => {
     { name: "Home", path: "/" },
     { name: "Projects", path: "/projects" },
     { name: "Blog", path: "/blog" },
+    { name: "Resume", path: "/resume" },
   ]
 
   const router = useRouter()

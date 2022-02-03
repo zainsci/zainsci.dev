@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap");
+@import "./scss/vars";
+
 .resume {
   & * {
     font-family: "Poppins", serif !important;
@@ -6,6 +8,11 @@
   }
   h1 {
     font-family: "Righteous", sans-serif !important;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
   }
 
   background-color: white;
@@ -16,6 +23,7 @@
   height: 29.7cm;
   margin: auto;
   border: 1px solid white;
+  margin-bottom: $spacing-xl;
 
   h1,
   h2,
@@ -41,7 +49,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    height: 100%;
+    height: max-content;
 
     svg {
       width: 20px;
@@ -195,17 +203,48 @@
   }
 }
 
-// @page {
-//   size: 21cm 29.7cm;
-//   margin: 15mm 20mm 15mm 20mm;
-//   /* change the margins as you want them to be. */
-// }
+.resume__utils {
+  width: 100%;
+  padding: $spacing-lg $spacing-xl;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-// @media print {
-//   .resume {
-//     width: 21cm;
-//     height: 29.7cm;
-//     margin: 15mm 20mm 15mm 20mm;
-//     /* change the margins as you want them to be. */
-//   }
-// }
+  button {
+    padding: $spacing-sm $spacing-md;
+    background: var(--hover-bg);
+    border: none;
+    border-radius: $b-radius-md;
+    cursor: pointer;
+    position: relative;
+
+    &:hover {
+      opacity: 0.9;
+    }
+    &:focus-visible {
+      outline: 1px solid var(--hover-bg);
+    }
+  }
+
+  &__type {
+    button.active {
+      color: white;
+      font-weight: 500;
+    }
+
+    button:nth-child(1) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    button:nth-child(2) {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+}
+
+@page {
+  size: 21cm 29.7cm;
+  margin: 0;
+  /* change the margins as you want them to be. */
+}
