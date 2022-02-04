@@ -2,9 +2,9 @@
   "name": "Zain Shabbir",
   "portrait": "/assets/images/Me512.png",
   "role": "Full-Stack Developer",
-  "summary": "Results-driven passionate system administrator and Programmer, seeking to use proven scripting and problem solving skills to improve cost and performance. Created and managed Computer Networks at a local Internet Cafe and for various other clients.",
+  "summary": "Results-driven passionate Full-Stack Developer and Programmer, seeking to use proven methods and problem solving skills to improve cost and performance. Created and managed Full Scale Web Applications from clients around the world.",
   "email": "zainansari08@gmail.com",
-  "tel": "+95 303 470 2 074",
+  "tel": "+92 303 470 2 074",
   "twitter": "zainsci",
   "linkedin": "zainsci",
   "website": "zainsci.dev",
@@ -19,7 +19,7 @@
       },
       "points": [
         "Developed and maintained Large Scale Applications for clients from all over the world.",
-        "Developed Cross-Browser compatible ceb applications with responsive design.",
+        "Developed Cross-Browser compatible web applications with responsive design.",
         "Developed high performance Chrome extensions to extend browser capability."
       ]
     },
