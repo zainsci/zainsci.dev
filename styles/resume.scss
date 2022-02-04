@@ -246,5 +246,9 @@
 @page {
   size: 21cm 29.7cm;
   margin: 0;
-  /* change the margins as you want them to be. */
+}
+
+* {
+  -webkit-print-color-adjust: exact !important;
+  color-adjust: exact !important;
 }

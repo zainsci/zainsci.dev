@@ -8,7 +8,6 @@ const ResumeSysAdmin = (props) => {
 
   function printResume() {
     let prtContent = document.getElementById("resume")
-    let cssContent = document.querySelectorAll("style")[3]
     let WinPrint = window.open(
       "",
       "",
@@ -20,7 +19,11 @@ const ResumeSysAdmin = (props) => {
       .forEach((link) =>
         WinPrint.document.head.appendChild(link.cloneNode(true))
       )
-    WinPrint.document.head.appendChild(cssContent.cloneNode(true))
+    document
+      .querySelectorAll("style")
+      .forEach((link) =>
+        WinPrint.document.head.appendChild(link.cloneNode(true))
+      )
     WinPrint.document.close()
     setTimeout(() => {
       WinPrint.focus()
