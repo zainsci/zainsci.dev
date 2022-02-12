@@ -2,13 +2,16 @@
   "name": "Zain Shabbir",
   "portrait": "/assets/images/Me512.png",
   "role": "Full-Stack Developer",
-  "summary": "Results-driven passionate Full-Stack Developer and Programmer, seeking to use proven methods and problem solving skills to improve cost and performance. Created and managed Full Scale Web Applications from clients around the world.",
-  "email": "zainansari08@gmail.com",
-  "tel": "+92 303 470 2 074",
-  "twitter": "zainsci",
-  "linkedin": "zainsci",
-  "website": "zainsci.dev",
-  "location": "Ghakhar, Gujranwala, Pakistan",
+  "summary": "Results-driven and passionate Full-Stack Developer with over 2+ years of experience, seeking to use proven methods and problem solving skills to improve cost and performance. Created and managed Full Scale Web Applications from clients around the world.",
+  "contacts": {
+    "email": "zainansari08@gmail.com",
+    "tel": "+92 303 470 2 074",
+    "github": "zainsci",
+    "twitter": "zainsci",
+    "linkedin": "zainsci",
+    "website": "zainsci.dev",
+    "location": "Ghakhar, Gujranwala, Pakistan"
+  },
   "work": [
     {
       "title": "Freelance Web Developer",
@@ -32,9 +35,29 @@
       },
       "points": [
         "Manage and Maintain Computer Network for users.",
-        "Manage, maintain and backup company data on company serve on a daily baisis.",
-        "Manage user data and connectivity to company in Saudia Arabia"
+        "Manage, maintain and backup company data on company server on a daily baisis.",
+        "Manage user data and users connectivity to company office in Saudia Arabia"
       ]
+    }
+  ],
+  "education": [
+    {
+      "title": "B.Sc. Computer Science",
+      "institute": "Govt. Post Graduate Islamia College",
+      "time": "2019 - 2021",
+      "location": "Gujranwala"
+    },
+    {
+      "title": "F.Sc. Mathematics",
+      "institute": "Superior College",
+      "time": "2016 - 2018",
+      "location": "Wazirabad"
+    },
+    {
+      "title": "Matriculation",
+      "institute": "Govt. Higer Secondary School",
+      "time": "2014 - 2016",
+      "location": "Ghakhar"
     }
   ],
   "certificates": [
@@ -48,7 +71,7 @@
     },
     {
       "short_name": "LinkedIn Certifications",
-      "full_name": "in Networking, Network Security, Programming, and DataBases."
+      "full_name": "in Programming & Programming Languages, Networking, Network Security, and DataBases."
     }
   ],
   "skills": [
@@ -56,18 +79,18 @@
     "JavaScript",
     "TypeScript",
     "SQL",
-    "React & NextJs",
+    "React",
+    "NextJs",
     "SvelteJs",
     "PHP",
     "Laravel",
     "Rust",
-    "Ubuntu & Linux"
+    "Linux",
+    "Ubuntu"
   ],
   "projects": [
     "Database Management Application For Blood Groups Details for a local NGO.",
-    "System Tools for a local company.",
-    "Scripts to Backup Company & User Data on a daily basis.",
-    "Implementing Practices to secure company data and prevent data breach."
+    "System Tools for a local company."
   ],
   "languages": ["Urdu", "Punjabi", "English", "Japanese", "Arabic"],
   "hobbies": ["Reading", "Writing", "Coding", "Gaming"]
