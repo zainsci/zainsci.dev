@@ -1,0 +1,14 @@
+[
+	{
+		"title": "Beginners Guide to Developing Chrome Extensions",
+		"summary": "This post will teach you everthing you need to build your own chrome extensions from a very simple one to as complex as it can get.",
+		"slug": "chrome-extension-guide",
+		"date": "2021-11-25"
+	},
+	{
+		"title": "Managing Your .dotfiles",
+		"summary": "The easiest way you and I can manage our dot files.",
+		"date": "2021-12-31",
+		"slug": "managing-your-dotfiles"
+	}
+]
