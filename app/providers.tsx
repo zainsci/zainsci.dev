@@ -21,7 +21,9 @@ export default function Providers({ children }) {
 					<>
 						<Header />
 
-						<main className="max-w-4xl mx-auto p-4 flex-1">{children}</main>
+						<main className="w-full max-w-4xl mx-auto p-4 flex-1">
+							{children}
+						</main>
 
 						<Footer />
 					</>

@@ -1,0 +1,15 @@
+### Extract Audio
+
+```bash
+# To m4a format
+$ ffmpeg -i <input_video> output.m4a
+
+# to mp3 format
+$ ffmpeg -i <input_video> output.mp3
+```
+
+### Snip a video or audio of custom duration
+
+```sh
+$ ffmpeg -i <input_video> -ss <starting_time> -t <duration> output.mp4
+```

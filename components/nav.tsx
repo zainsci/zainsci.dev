@@ -16,7 +16,6 @@ const Nav = () => {
 	useEffect(() => {
 		if (typeof window !== "undefined") {
 			setActive(location.pathname.split("/")[1])
-			console.log(location.pathname.split("/")[1])
 		}
 	}, [])
 
@@ -27,7 +26,7 @@ const Nav = () => {
 					return (
 						<li key={link.name} className="">
 							<Link
-								href={`/${link.path}`}
+								href={link.path.includes("http") ? link.path : `/${link.path}`}
 								className={
 									"px-3 py-1 rounded-lg from-zinc-200 to-zinc-100 dark:from-zinc-800 dark:to-zinc-900 hover:bg-gradient-to-r " +
 									(active === link.path ? "bg-gradient-to-r" : "")

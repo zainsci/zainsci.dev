@@ -7,7 +7,7 @@
 }
 
 .bg-grid-item {
-	@apply rounded-lg text-black dark:text-white bg-gradient;
+	@apply rounded-xl text-black dark:text-white bg-gradient;
 }
 
 .grid-box {

@@ -1,0 +1,10 @@
+### Generate a Random Hex Color
+
+```js
+function genRandomHexColor() {
+	return `#${Math.floor(Math.random() * 16777215).toString(16)}`
+}
+
+const randomColor = genRandomHexColor()
+console.log(randomColor)
+```
