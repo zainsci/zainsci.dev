@@ -25,7 +25,7 @@ const Snippets = () => {
 								href={`/snippets/${snippetType}`}
 								className="block relative h-full rounded-lg p-[2px] overflow-hiddenbg-clip-border bg-gradient-to-tr from-purple-800 to-red-800 hover:from-purple-600 hover:to-red-800 transition duration-1000"
 							>
-								<div className="bg-black p-4 rounded-md">
+								<div className="bg-white dark:bg-black p-4 rounded-md">
 									<div className="w-8 h-8 flex justify-center items-center">
 										<Image
 											src={`/assets/images/${snippetType}-logo.png`}
