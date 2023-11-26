@@ -38,5 +38,8 @@
 	"browser": {
 		"fs": false,
 		"os": false
+	},
+	"engines": {
+		"node": ">=16"
 	}
 }
